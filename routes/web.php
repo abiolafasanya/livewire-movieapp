@@ -19,6 +19,9 @@ Route::get('/', function () {
 Route::get('/movies', function () {
     return view('movies');
 });
+Route::get('/movie/info', function () {
+    return view('livewire.movie-info');
+});
 
 Route::group(['middleware' => [
     'auth:sanctum', 
@@ -29,6 +32,3 @@ Route::group(['middleware' => [
     })->name('dashboard');
 });
 
-// Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-//     return view('dashboard');
-// })->name('dashboard');
