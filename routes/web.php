@@ -13,11 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::get('/movies', function () {
+Route::get('/', function () {
     return view('movies');
 })->name('movies');
 
@@ -26,6 +26,7 @@ Route::get('/movie/info', function () {
 })->name('movie/info');
 
 //  Protected and authentication route
+
 Route::group(['middleware' => [
     'auth:sanctum', 
     'verified'],
