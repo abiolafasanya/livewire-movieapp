@@ -3,7 +3,7 @@
     <div class="grid grid-col-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
    
         <div class="my-4 p-3">
-            <a href="#" wire:click="info()">
+            <a href="{{ route('movie/info') }}">
                 <img src="img/1.jpg" alt="image 1" 
                 class="hover:opacity-75 transition ease-in-out bg-blend-normal rounded">
             </a>
@@ -20,7 +20,7 @@
             </div>
        </div>
         <div class="mt-8 p-3">
-            <a href="#">
+            <a href="{{ route('movie/info') }}">
                 <img src="img/2.jpg" alt="image 2" 
                 class="hover:opacity-75 transition ease-in-out bg-blend-normal rounded">
             </a>
@@ -37,7 +37,7 @@
             </div>
        </div>
         <div class="mt-8 p-3">
-            <a href="#">
+            <a href="{{ route('movie/info') }}">
                 <img src="img/3.jpg" alt="image 3" 
                 class="hover:opacity-75 transition ease-in-out bg-blend-normal rounded">
             </a>
@@ -54,7 +54,7 @@
             </div>
        </div>
         <div class="mt-8 p-3">
-            <a href="#">
+            <a href="{{ route('movie/info') }}">
                 <img src="img/4.jpg" alt="image 4" 
                 class="hover:opacity-75 transition ease-in-out bg-blend-normal rounded">
             </a>
@@ -71,7 +71,7 @@
             </div>
        </div>
         <div class="mt-8 p-3">
-            <a href="#">
+            <a href="{{ route('movie/info') }}">
                 <img src="img/5.jpg" alt="image 5" 
                 class="hover:opacity-75 transition ease-in-out bg-blend-normal rounded">
             </a>
@@ -88,7 +88,7 @@
             </div>
        </div>
         <div class="mt-8 p-3">
-            <a href="#">
+            <a href="{{ route('movie/info') }}">
                 <img src="img/6.jpg" alt="image 6" 
                 class="hover:opacity-75 transition ease-in-out bg-blend-normal rounded">
             </a>
@@ -105,7 +105,7 @@
             </div>
        </div>
         <div class="mt-8 p-3">
-            <a href="#">
+            <a href="{{ route('movie/info') }}">
                 <img src="img/7.jpg" alt="image 7" 
                 class="hover:opacity-75 transition ease-in-out bg-blend-normal rounded">
             </a>
@@ -122,7 +122,7 @@
             </div>
        </div>
         <div class="mt-8 p-3">
-            <a href="#">
+            <a href="{{ route('movie/info') }}">
                 <img src="img/8.jpg" alt="image 8" 
                 class="hover:opacity-75 transition ease-in-out bg-blend-normal rounded">
             </a>
