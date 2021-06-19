@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\MoviesController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,6 +26,12 @@ Route::get('/', function () {
 Route::get('/movie/info', function () {
     return view('livewire.movie-info');
 })->name('movie/info');
+
+
+Route::get('/movies', [MoviesController::class, 'index']);
+
+
+
 
 //  Protected and authentication route
 
