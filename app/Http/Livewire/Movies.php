@@ -17,7 +17,7 @@ class Movies extends Component
 
     public function movies()
     {
-     return $this->movies = $movies = Http::withToken(config('services.tmdb.token'))
+     return $movies = Http::withToken(config('services.tmdb.token'))
                 ->get('http://api.themoviedb.org/3/movie/popular')
                 ->json()['results'];
   
