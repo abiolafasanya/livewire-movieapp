@@ -31,7 +31,7 @@ return [
     ],
 
     'tmdb' => [
-        'token' => env('MOVIE_API_TOKEN'),
+        'token' => env('TMDB_TOKEN'),
     ],
 
 ];
