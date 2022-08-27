@@ -17,7 +17,7 @@ class Movies extends Component
 
     public function movies()
     {
-     return $movies = Http::withToken(config('services.tmdb.token'))
+     return Http::withToken(config('services.tmdb.token'))
                 ->get('http://api.themoviedb.org/3/movie/popular')
                 ->json()['results'];
   
@@ -29,7 +29,7 @@ class Movies extends Component
             ->get('http://api.themoviedb.org/3/genre/movie/list')
             ->json()['genres'];
 
-        return $genres = collect($genreArr)->mapWithKeys(function ($genre){
+        return collect($genreArr)->mapWithKeys(function ($genre){
             return  [$genre['id'] => $genre['name']];
         });
     }

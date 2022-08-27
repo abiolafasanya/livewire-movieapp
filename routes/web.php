@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ActorController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\MoviesController;
@@ -20,9 +21,9 @@ use App\Http\Controllers\SeriesController;
 //     return view('welcome');
 // });
 
-Route::get('/', function () {
+Route::get('/movies', function () {
     return view('movies');
-})->name('movies');
+});
 
 Route::get('/movie/info', function () {
     return view('livewire.movie-info');
@@ -31,16 +32,21 @@ Route::get('/movie/info', function () {
 
 
 
-Route::controller('movies', MoviesController::class)->group(function () {
-    Route::get('/', 'index');
-    Route::get('/{id}', 'getMovie')->name('movie');
+Route::controller(MoviesController::class)->group(function () {
+    Route::get('/', 'index')->name('movies');
+    Route::get('/movie/{id}', 'getMovie')->name('movie');
+    Route::get('test/{id}', 'tvSeries');
+    Route::get('/casts/{id}', 'casts');
 });
 
-Route::controller('tv', SeriesController::class)->group(function () {
-    Route::get('/', 'index');
-    Route::get('/{id}', 'show');
+Route::controller(SeriesController::class)->group(function () {
+    Route::get('/series', 'index')->name('series');
+    Route::get('/series/{id}', 'show');
 });
 
+Route::controller(ActorController::class)->group(function () {
+    Route::get('/actors', 'actors')->name('actors');
+});
 
 
 

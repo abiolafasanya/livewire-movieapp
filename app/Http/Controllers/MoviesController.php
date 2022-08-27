@@ -18,7 +18,7 @@ class MoviesController extends Controller
 
         $movies = Http::withToken(config('services.tmdb.token'))
             ->get('http://api.themoviedb.org/3/movie/popular')
-            ->json();
+            ->json()['results'];
 
             $genreArr = Http::withToken(config('services.tmdb.token'))
         ->get('http://api.themoviedb.org/3/genre/movie/list')
@@ -27,8 +27,7 @@ class MoviesController extends Controller
         $genres = collect($genreArr)->mapWithKeys(function ($genre){
             return [$genre['id'] => $genre['name']];
         });
-
-           return $genres;
+           return view('movie.index', ['movies' => $movies, 'genres' => $genres]);
     }
 
     public function movies()
@@ -39,11 +38,11 @@ class MoviesController extends Controller
   
     }
 
-    public function tvSeries()
+    public function tvSeries($id)
     {
      return Http::withToken(config('services.tmdb.token'))
-                ->get('http://api.themoviedb.org/3/movie/popular')
-                ->json()['results'];
+                ->get('http://api.themoviedb.org/3/tv/'.$id)
+                ->json();
   
     }
 
@@ -84,15 +83,20 @@ class MoviesController extends Controller
         return \Carbon\Carbon::parse($date)->format('M d, Y');
     }
 
-    public function casts(Request $request, $id) {
-        return $movie = Http::withToken(config('services.tmdb.token'))
-        ->get('http://api.themoviedb.org/3/movie/'.$id.'/credits')
+    public function casts($id) {
+        return Http::withToken(config('services.tmdb.token'))
+        ->get('http://api.themoviedb.org/3/tv/'.$id.'/credits')
         ->json();
     }
 
     public function search (Request $request){
+        if($request->query('people')) {
+            $query = $request->query('people');
+            return Http::withToken(config('services.tmdb.token'))
+            ->get('http://api.themoviedb.org/3/search/people?query='.$query)
+            ->json()['results'];
+        }
         $query = $request->query('query');
-        // dd($request->query('query'));
         $result = Http::withToken(config('services.tmdb.token'))
         ->get('http://api.themoviedb.org/3/search/movie?query='.$query)
         ->json();

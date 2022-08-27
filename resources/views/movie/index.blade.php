@@ -1,17 +1,17 @@
 <x-movie>
     <div class="py-8 px-10 container mx-auto">
-        <h1 class="px-3 text-lg text-yellow-500">Tv Series</h1>
+        <h1 class="px-3 text-lg text-yellow-500">Popular Movies</h1>
 
         <div class="grid grid-col-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             @foreach ($movies as $movie)
                 <div class="mt-8 p-3">
-                    <a href="{{ url('series/' . $movie['id']) }}">
+                    <a href="{{ url('movie/' . $movie['id']) }}">
                         <img src="https://image.tmdb.org/t/p/w500/{{ $movie['poster_path'] }}" alt="image 1"
                             class="hover:opacity-75 transition ease-in-out bg-blend-normal rounded">
                     </a>
                     <div class="mt-2">
                         <a href="#" class="hover:text-gray-300">
-                            {{ $movie['name'] }}
+                            {{ $movie['title'] }}
                         </a>
                         <div class="flex items-center my-2 text-gray-300 text-sm">
                             <svg class="mx-1" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
@@ -34,7 +34,7 @@
                             <span class="">{{ $movie['vote_average'] * 10 }}%</span>
                             <span class="mx-2">|</span>
                             <span class="">
-                                {{ isset($movie['first_air_date']) ? \Carbon\Carbon::parse($movie['first_air_date'])->format('M d,Y') : 'No date' }}
+                                {{ isset($movie['release_date']) ? \Carbon\Carbon::parse($movie['release_date'])->format('M d,Y') : 'No date' }}
                             </span>
                         </div>
                         <span class="flex items-center text-gray-400 text-sm">
@@ -48,10 +48,6 @@
                     </div>
                 </div>
             @endforeach
-
-
         </div>
-
     </div>
-
 </x-movie>

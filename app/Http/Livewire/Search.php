@@ -18,7 +18,6 @@ class Search extends Component
             $result = Http::withToken(config('services.tmdb.token'))
         ->get('http://api.themoviedb.org/3/search/movie?query='.$this->search)
         ->json()['results'];
-        // dd($result);
         }
 
 
