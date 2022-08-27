@@ -33,7 +33,15 @@ class MoviesController extends Controller
 
     public function movies()
     {
-     return $movies = Http::withToken(config('services.tmdb.token'))
+     return Http::withToken(config('services.tmdb.token'))
+                ->get('http://api.themoviedb.org/3/movie/popular')
+                ->json()['results'];
+  
+    }
+
+    public function tvSeries()
+    {
+     return Http::withToken(config('services.tmdb.token'))
                 ->get('http://api.themoviedb.org/3/movie/popular')
                 ->json()['results'];
   
@@ -42,7 +50,7 @@ class MoviesController extends Controller
     public function getMovie(Request $request, $id)
     {
         $movie = Http::withToken(config('services.tmdb.token'))
-                ->get('http://api.themoviedb.org/3//movie/'.$id)
+                ->get('http://api.themoviedb.org/3/movie/'.$id)
                 ->json();
                 $casts = Http::withToken(config('services.tmdb.token'))
                 ->get('http://api.themoviedb.org/3/movie/'.$id.'/credits')
@@ -53,7 +61,7 @@ class MoviesController extends Controller
     public function getMovieApi(Request $request, $id)
     {
         $movie = Http::withToken(config('services.tmdb.token'))
-                ->get('http://api.themoviedb.org/3//movie/'.$id)
+                ->get('http://api.themoviedb.org/3/movie/'.$id)
                 ->json();
         // return view('livewire.movie-info', ['movie' => $movie]);
 
@@ -80,6 +88,16 @@ class MoviesController extends Controller
         return $movie = Http::withToken(config('services.tmdb.token'))
         ->get('http://api.themoviedb.org/3/movie/'.$id.'/credits')
         ->json();
+    }
+
+    public function search (Request $request){
+        $query = $request->query('query');
+        // dd($request->query('query'));
+        $result = Http::withToken(config('services.tmdb.token'))
+        ->get('http://api.themoviedb.org/3/search/movie?query='.$query)
+        ->json();
+
+        return $result['results'];
     }
     
 }

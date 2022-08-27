@@ -28,7 +28,7 @@ Route::get('/movie/info', function () {
 })->name('movie/info');
 
 
-Route::get('/movie/{id}',[ MoviesController::class, 'getMovie']);
+Route::get('/movie/{id}',[ MoviesController::class, 'getMovie'])->name('movie');
 
 Route::get('/movies', [MoviesController::class, 'index']);
 

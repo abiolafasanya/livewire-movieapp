@@ -25,4 +25,5 @@ Route::controller(MoviesController::class)->group(function () {
     Route::get('/test', 'movies');
     Route::get('/movie/{id}', 'getMovieApi');
     Route::get('/casts/{id}', 'casts');
+    Route::get('/movie', 'search');
 });

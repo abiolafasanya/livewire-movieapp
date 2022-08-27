@@ -15,8 +15,8 @@
             </span>
             
         </div>
-
-        <div class="flex flex-col md:flex-row items-center">
+        @livewire('search')
+        {{-- <div class="flex flex-col md:flex-row items-center">
            <div class="relative md:mt-0 mt-2">
                 <input type="text" class="bg-gray-800 pl-10 text-sm focus:border-gray-500 focus:outline-none rounded-full w-64 px-4 py-1" placeholder="Search">
                 <div class="absolute top-0">
@@ -33,7 +33,7 @@
                </a>
            </div>
 
-        </div>
+        </div> --}}
 
     </div>
     

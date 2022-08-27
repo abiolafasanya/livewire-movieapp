@@ -14,6 +14,7 @@
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 
         {{-- <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.min.js" defer></script> --}}
+        <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" ></script>
 
         @livewireStyles
 
@@ -26,6 +27,7 @@
         
         <div class="font-sans text-100">
             {{ $slot }}
+            <h1 x-data="{ message: 'I ❤️ Alpine' }" x-text="message"></h1>
         </div>
 
         @livewireScripts
