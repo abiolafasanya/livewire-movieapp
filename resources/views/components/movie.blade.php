@@ -27,7 +27,6 @@
         
         <div class="font-sans text-100">
             {{ $slot }}
-            <h1 x-data="{ message: 'I ❤️ Alpine' }" x-text="message"></h1>
         </div>
 
         @livewireScripts

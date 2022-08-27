@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\MoviesController;
+use App\Http\Controllers\SeriesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,9 +29,17 @@ Route::get('/movie/info', function () {
 })->name('movie/info');
 
 
-Route::get('/movie/{id}',[ MoviesController::class, 'getMovie'])->name('movie');
 
-Route::get('/movies', [MoviesController::class, 'index']);
+
+Route::controller('movies', MoviesController::class)->group(function () {
+    Route::get('/', 'index');
+    Route::get('/{id}', 'getMovie')->name('movie');
+});
+
+Route::controller('tv', SeriesController::class)->group(function () {
+    Route::get('/', 'index');
+    Route::get('/{id}', 'show');
+});
 
 
 
