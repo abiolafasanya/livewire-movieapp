@@ -75,7 +75,7 @@
                     <div class="mt-8 p-3">
                         <a href="#" wire:click="">
                             {{-- <img src="{{ asset('img/barry.jpg') }}" alt="image 1" --}}
-                                <img src="https://image.tmdb.org/t/p/w500/{{ $cast['profile_path'] }}" alt="image 1"
+                                <img src="https://image.tmdb.org/t/p/w235_and_h235_face/{{ $cast['profile_path'] }}" alt="image 1"
                                     class="hover:opacity-75 transition ease-in-out bg-blend-normal rounded">
                                 </a>
                                 <div class="mt-2">

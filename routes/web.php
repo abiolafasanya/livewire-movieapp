@@ -46,6 +46,7 @@ Route::controller(SeriesController::class)->group(function () {
 
 Route::controller(ActorController::class)->group(function () {
     Route::get('/actors', 'actors')->name('actors');
+    Route::get('/actor/{id}', 'show');
 });
 
 

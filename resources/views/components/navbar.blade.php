@@ -11,7 +11,7 @@
             <span class="flex items-center flex-col md:flex-row">
                 <a href="{{ route('movies') }}" class="text-gray-400 md:ml-2 hover:text-gray-100">Movies</a>
                 <a href="{{ route('series') }}" class="text-gray-400 md:ml-2 hover:text-gray-100">Tv shows</a>
-                <a href="" class="text-gray-400 md:ml-2 hover:text-gray-100">Actors</a>
+                <a href="{{route('actors')}}" class="text-gray-400 md:ml-2 hover:text-gray-100">Actors</a>
             </span>
             
         </div>
