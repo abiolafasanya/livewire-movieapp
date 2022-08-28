@@ -5,7 +5,7 @@
             {{-- <img src="{{ asset('img/flash2.jpg')}}" alt="Info Image" class="w-96"> --}}
             <div class="md:w-1/4">
                 <img src="https://image.tmdb.org/t/p/w500/{{ $actor['profile_path'] }}" alt="Info Image" class="">
-                <x-socials :socials="$socials" :actor="$actor" />
+                {{-- <x-socials :socials="$socials" :actor="$actor" /> --}}
             </div>
 
             <div class="md:w-3/4 md:ml-24 text-gray-100">
