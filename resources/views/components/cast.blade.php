@@ -2,7 +2,7 @@
     <span class="grid md:grid-cols-5 grid-cols-1 gap-4 items-center text-gray-400 text-sm">
         @foreach ($casts as $cast)
             <div class="flex flex-col text-sm">
-                <a href="{{ route('movie', $cast['id']) }}">
+                <a href="/movie/{{ $cast['id'] }}">
                     @isset($cast['poster_path'])
                         <img src="https://image.tmdb.org/t/p/w185/{{ $cast['poster_path'] }}" alt=""
                             title="{{ $cast['overview'] }}">
