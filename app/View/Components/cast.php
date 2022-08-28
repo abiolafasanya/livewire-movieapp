@@ -15,9 +15,10 @@ class cast extends Component
     public function __construct($casts)
     {
         $title = collect($casts)->get('cast');
-        $casts = collect($title)->where('media_type', 'movie')
+        // $casts = collect($title)->where('media_type', 'movie')
+        // ->sortByDesc('popularity')->paginate(5);
+        $this->casts = $casts =  collect($title)->where('media_type', 'movie')
         ->sortByDesc('popularity')->paginate(5);
-        $this->casts = $casts;
     }
 
 
