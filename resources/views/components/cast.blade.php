@@ -1,6 +1,6 @@
 <div>
     <span class="grid md:grid-cols-5 grid-cols-1 gap-4 items-center text-gray-400 text-sm">
-        @foreach ($casts as $cast)
+        {{-- @foreach ($casts as $cast) --}}
             <div class="flex flex-col text-sm">
                 <a href="/movie/{{ $cast['id'] }}">
                     @isset($cast['poster_path'])
@@ -19,7 +19,8 @@
                     @endisset
                 </h1>
             </div>
-        @endforeach
+        {{-- @endforeach --}}
+        @dump($casts)
     </span>
     <div class="bg-gray-200 p-2">
         {{ $casts->links() }}
