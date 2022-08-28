@@ -20,9 +20,30 @@ class ActorController extends Controller
         $actor = Http::withToken(config('services.tmdb.token'))
         ->get('http://api.themoviedb.org/3/person/'.$id)
         ->json();
-        // return $actor;
 
-        return view('actors.show', ['actor' => $actor]);
+        $socials = Http::withToken(config('services.tmdb.token'))
+        ->get('http://api.themoviedb.org/3/person/'.$id.'/external_ids')
+        ->json();
+        
+        $credits = Http::withToken(config('services.tmdb.token'))
+        ->get('http://api.themoviedb.org/3/person/'.$id.'/combined_credits')
+        ->json();
+        // return $actor;
+        // dump($actor);
+        // dump($socials);
+        // dump($credits);
+
+        // $title = collect($credits)->get('cast');
+        // $credit = collect($title)->where('media_type', 'movie')
+        // ->sortByDesc('popularity')->take(8);
+        // dump($credit);
+
+        return view('actors.show', [
+            'actor' => $actor,
+            'socials' => $socials,
+            'credits' => $credits,
+        ]);
+           
     }
 
 }
