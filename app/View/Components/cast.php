@@ -16,7 +16,7 @@ class cast extends Component
     {
         $title = collect($casts)->get('cast');
         $casts = collect($title)->where('media_type', 'movie')
-        ->sortByDesc('popularity')->paginate(5);
+        ->sortByDesc('popularity')-take(10);
         $this->casts = $casts;
     }
 
