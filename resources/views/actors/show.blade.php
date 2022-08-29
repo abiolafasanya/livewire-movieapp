@@ -36,8 +36,8 @@
                 </div>
                 <div class="mt-8 text-gray-300 px-2">
                     <div class="h1 text-gray-100 my-1 text-2xl font-semibold">Casts</div>
-                    <x-casts :credits="$credits" />
-                    {{-- <livewire:casts :credits="$credits" /> --}}
+                    {{-- <x-casts :credits="$credits" /> --}}
+                    <livewire:casts :casts="$id" />
                 </div>
             </div>
 

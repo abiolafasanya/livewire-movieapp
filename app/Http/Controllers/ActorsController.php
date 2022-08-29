@@ -34,6 +34,7 @@ class ActorsController extends Controller
             'actor' => $actor,
             'socials' => $socials,
             'credits' => $credits,
+            'id' => $id,
         ]);
     }
 }
