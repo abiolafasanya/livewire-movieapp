@@ -11,7 +11,6 @@
     <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
     <!-- Styles -->
-    @vite('resources/css/app.css')
 
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"
@@ -23,6 +22,7 @@
             font-family: 'Nunito', sans-serif;
         }
     </style>
+    @vite('resources/js/app.js')
     @livewireStyles
 </head>
 
