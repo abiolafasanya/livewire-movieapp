@@ -26,7 +26,7 @@
     @livewireStyles
 </head>
 
-<body class="bg-gray-900 text-gray-100">
+<body class="antialiased bg-gray-900 text-gray-100">
     <x-navbar />
     <main>
         {{ $slot }}
