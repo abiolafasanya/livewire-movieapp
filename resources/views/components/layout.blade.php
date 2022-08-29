@@ -31,7 +31,16 @@
     <main>
         {{ $slot }}
     </main>
-
+    <footer class="text-center border-t text-gray-300 text-sm border-gray-800 py-6">
+        <div class="text-center">
+            <div>
+                Credit: <a href="https://www.themoviedb.org/">TMDB Movie Listing API</a>
+            </div>
+            <div>
+                Github Repository: <a href="https://github.com/fastbeetech/livewire-movieapp"><i class="fab fa-github" aria-hidden="true"></i></a>
+            </div>
+        </div>
+    </footer>
     @livewireScripts
 </body>
 
