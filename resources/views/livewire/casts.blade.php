@@ -22,7 +22,7 @@
         @endforeach
 
     </span>
-    <div class="bg-gray-200 p-2">
+    {{-- <div class="bg-gray-200 p-2"> --}}
         {{-- {{ $casts->links() }} --}}
-    </div>
+    {{-- </div> --}}
 </div>
