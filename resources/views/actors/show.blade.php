@@ -6,8 +6,7 @@
             <div class="md:w-1/4">
                 <img src="https://image.tmdb.org/t/p/w500/{{ $actor['profile_path'] }}" alt="Info Image" class="">
                 {{-- <x-socials :social="$socials" :actor="$actor" /> --}}
-                <x-socials :social="$socials" :actor="$actor" />
-                {{-- @dump($socials) --}}
+                <livewire:socials :actor="$actor" :social="$socials" />
             </div>
 
             <div class="md:w-3/4 md:ml-24 text-gray-100">
@@ -37,8 +36,8 @@
                 </div>
                 <div class="mt-8 text-gray-300 px-2">
                     <div class="h1 text-gray-100 my-1 text-2xl font-semibold">Casts</div>
-                    {{-- <x-casts :casts="$credits" /> --}}
                     <x-casts :credits="$credits" />
+                    {{-- <livewire:casts :credits="$credits" /> --}}
                 </div>
             </div>
 
